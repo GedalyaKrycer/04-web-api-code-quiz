@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+/* font-family: 'Share Tech Mono', monospace; */
+/* font-family: 'Montserrat', sans-serif; */
+
+body {
+    background-color: #202120;
+}
+
+a {
+    color: #4399db;
+    font-family: 'Share Tech Mono', monospace;
+    
+}
+
+a:hover {
+    color: #1f5178;
+    transition: .4s;
+    text-decoration: none;
+}
+
+.nav__timer {
+    color: rgba(255, 255, 255, 0.808);
+    font-family: 'Share Tech Mono', monospace;
+}
