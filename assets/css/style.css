@@ -11,10 +11,6 @@ body {
     background-color: #202120;
 }
 
-.container--mx-width {
-    max-width: 800px;
-}
-
 a {
     color: #4399db;
     font-family: 'Share Tech Mono', monospace;
@@ -30,24 +26,64 @@ a:hover {
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 2.5rem;
+    font-size: 4rem;
 }
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    display: inline-block;
+    border-left: 3px solid #4399db;
+    padding: 4px 6px 4px 10px;
+    background-color: #1f5178;
+    margin-bottom: 1.2rem;
+}
+
 
 p {
     font-family: 'Montserrat', sans-serif; 
 }
 
-.btn--style {
+code {
+    display: inline-block;
+    background-color: #313531;
+    font-family: 'Share Tech Mono', monospace;
+    padding: 3px 5px 0 5px;
+    font-weight: normal;
+    border: #404950 solid 1px;
+    border-radius: 3px;
+    color: #d8ebff;
+}
+
+.container--mx-width {
+    max-width: 800px;
+}
+
+.btn--main-style {
     background-color: #1f5178;
-    box-shadow: 0px 3px 8px 2px #02121f;
-    /* border-color: #4399db; */
+    box-shadow: 0px 5px 8px 2px #091927;
     color: white;
     font-family: 'Share Tech Mono', monospace;
+    display: block;
+    margin-bottom: 1.2rem;
+}
+
+.btn--lg-pad {
+    padding: .8rem 2.5rem;
 }
 
 .btn:hover {
-    box-shadow: 0px 0px 5px 0px #02121f;
+    box-shadow: 0px 1px 3px 0px #02121f;
     color: #4399db;
+    transition: .4s;
+}
+
+.btn:active {
+    box-shadow: none;
+    background-color: rgba(31, 81, 120, 0.6);
     transition: .4s;
 }
 
@@ -56,10 +92,11 @@ Nav STYLES
 —————————————————————————————————————————————————*/
 .navbar {
     font-size: 18px;
+    border-bottom: #101010 1px solid;
 }
 
 .nav__timer {
-    color: rgba(255, 255, 255, 0.808);
+    color: rgba(255, 255, 255, 0.85);
     font-family: 'Share Tech Mono', monospace;
 }
 
@@ -70,13 +107,34 @@ Nav STYLES
 
 
 /*—————————————————————————————————————————————————  
-Start STYLES
+Start Screen STYLES
 —————————————————————————————————————————————————*/
 .start-content {
     color: white;
     text-align: center;
+    display: none;
 }
 
 .start-content--color {
     color: rgba(255, 255, 255, 0.85);
 }
+
+
+/*—————————————————————————————————————————————————  
+Question STYLES
+—————————————————————————————————————————————————*/
+.question--style {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 28px;
+    margin-bottom: 2rem;
+}
+
+.question-1 {
+    display: block;
+}
+
+
+/*—————————————————————————————————————————————————  
+Question STYLES
+—————————————————————————————————————————————————*/
+
