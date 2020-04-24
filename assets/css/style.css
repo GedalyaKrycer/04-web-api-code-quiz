@@ -3,8 +3,16 @@
 /* font-family: 'Share Tech Mono', monospace; */
 /* font-family: 'Montserrat', sans-serif; */
 
+
+/*—————————————————————————————————————————————————  
+Base STYLES
+—————————————————————————————————————————————————*/
 body {
     background-color: #202120;
+}
+
+.container--mx-width {
+    max-width: 800px;
 }
 
 a {
@@ -19,7 +27,56 @@ a:hover {
     text-decoration: none;
 }
 
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.btn--style {
+    background-color: #1f5178;
+    box-shadow: 0px 3px 8px 2px #02121f;
+    /* border-color: #4399db; */
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 5px 0px #02121f;
+    color: #4399db;
+    transition: .4s;
+}
+
+/*—————————————————————————————————————————————————  
+Nav STYLES
+—————————————————————————————————————————————————*/
+.navbar {
+    font-size: 18px;
+}
+
 .nav__timer {
     color: rgba(255, 255, 255, 0.808);
     font-family: 'Share Tech Mono', monospace;
+}
+
+#timeLeft {
+    font-weight: bold;
+}
+
+
+
+/*—————————————————————————————————————————————————  
+Start STYLES
+—————————————————————————————————————————————————*/
+.start-content {
+    color: white;
+    text-align: center;
+}
+
+.start-content--color {
+    color: rgba(255, 255, 255, 0.85);
 }
