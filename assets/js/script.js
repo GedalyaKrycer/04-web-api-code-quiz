@@ -2,7 +2,7 @@
 let mainContentSect = document.querySelectorAll("div");
 let correctFeedback = document.querySelector("#correctFeedback");
 let wrongFeedback = document.querySelector("#wrongFeedback");
-
+let timeLeft = document.querySelector("#timeLeft"); 
 
 // Object that holds all the answers  
 let answers = {
@@ -42,7 +42,31 @@ let answers = {
 // —————————————————————————————————————————————————————
 
 
-// Question Feedback Controls
+// Start Time 
+let timerAmount = 100;
+timeLeft.textContent = timerAmount;
+
+
+// Count Down Function
+function timer() {
+    let countDown = setInterval(() => { 
+            timer() 
+          }, 1000);
+
+    if (timerAmount <= 0) {
+        clearInterval(countDown);
+        // Will go to final score
+    } else {
+        timerAmount--;
+        timeLeft.textContent = timerAmount;
+    }
+};
+
+
+// —————————————————————————————————————————————————————
+
+
+// Correct/Wrong Feedback Controls
 
 function showCorrect() {
 
@@ -65,6 +89,12 @@ function showWrong() {
 
     // Shows Wrong Text
     wrongFeedback.style.display = "block";
+
+    // Reduces Timer
+    for (let i = 0; i < 5; i++) {
+        timerAmount--;
+    }
+     timeLeft.textContent = timerAmount;
 
     // Removes Wrong text after 1 sec
     setTimeout(function() {
@@ -100,6 +130,9 @@ function startScreen() {
 
         // Hide Start Section 
         startQuizDisplay.style.display = "none";
+
+        // Start Timer 
+        timer();
 
         // Shows Question 1
         return question1();
