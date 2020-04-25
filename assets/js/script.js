@@ -49,16 +49,15 @@ timeLeft.textContent = timerAmount;
 
 // Count Down Function
 function timer() {
-    let countDown = setInterval(() => { 
-            timer() 
-          }, 1000);
-
-    if (timerAmount <= 0) {
-        clearInterval(countDown);
-        // Will go to final score
-    } else {
-        timerAmount--;
-        timeLeft.textContent = timerAmount;
+    let countDown = setInterval(count, 1000);
+    function count() {
+        if (timerAmount <= 0) {
+            clearInterval(countDown);
+            // Will go to final score
+        } else {
+            timerAmount--;
+            timeLeft.textContent = timerAmount;
+        }
     }
 };
 
