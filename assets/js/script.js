@@ -49,11 +49,15 @@ timeLeft.textContent = timerAmount;
 
 // Count Down Function
 function timer() {
+    // Sets up count down
     let countDown = setInterval(count, 1000);
+
+    // Sets up conditionals for when counter hits 0
     function count() {
         if (timerAmount <= 0) {
             clearInterval(countDown);
-            // Will go to final score
+
+            // Will go to final score later on
         } else {
             timerAmount--;
             timeLeft.textContent = timerAmount;
@@ -110,8 +114,8 @@ function showWrong() {
 for (let i = 0; i < mainContentSect.length; i++) {
     mainContentSect[i].addEventListener("click", function(event) {
         startScreen();
-        question1()
-        
+        question1();
+        question2();
     });
 };
 
@@ -134,7 +138,7 @@ function startScreen() {
         timer();
 
         // Shows Question 1
-        return question1();
+        question1();
     }
 }
  
@@ -152,25 +156,61 @@ function question1() {
     // Coniditionals to validate if the correct answer is selected
     if (event.target.type == "button" && event.target === answers.question1.answer2) {
         
-        // Shows correct text on a timer
+        // Flashes correct text
         showCorrect();
+
+        // Hides Current Question Section 
+        q1Display.style.display = "none";
+
+        // Goes to next question
+        question2();
 
     } else if (event.target.type == "button" && 
     event.target === answers.question1.answer1 || 
     event.target === answers.question1.answer3 || 
     event.target === answers.question1.answer4) {
 
-        // Shows wrong text on a timer
+        // Flashes wrong text
         showWrong();
-        
-    } 
-    
 
+        // Hides Current Question Section 
+        q1Display.style.display = "none";
+
+        // Goes to next question
+        question2();
+    } 
 }
 
 
 // —————————————————————————————————————————————————————
 
 
+// This runs Question 2
+function question2() {
+    const q2Display = document.querySelector(".question-2");
+    
+    // Displays Question 1
+    q2Display.style.display = "block";
 
+    // Coniditionals to validate if the correct answer is selected
+    if (event.target.type == "button" && event.target === answers.question2.answer1) {
+        
+        // Flashes correct text
+        showCorrect();
+
+        // Goes to next question
+        // question3();
+
+    } else if (event.target.type == "button" && 
+    event.target === answers.question2.answer2 || 
+    event.target === answers.question2.answer3 || 
+    event.target === answers.question2.answer4) {
+
+        // Flashes wrong text
+        showWrong();
+
+        // Goes to next question
+        // question3();
+    } 
+}
 
