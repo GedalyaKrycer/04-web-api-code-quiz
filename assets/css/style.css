@@ -143,6 +143,8 @@ Question STYLES
     margin-bottom: 2rem;
 }
 
+/* !!!!! SWITCH TO SHOW / HIDE CLASSES !!!! */
+
 .question-1 {
     display: none;
 }

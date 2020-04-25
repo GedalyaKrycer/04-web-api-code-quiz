@@ -1,8 +1,10 @@
-// Global Scope Variables For DOM Elements
-let mainContentSect = document.querySelectorAll("div");
+// Global Scope Variables For DOM Element
+// Targets all buttons 
+let mainContentSect = document.querySelectorAll("button");
+
 let correctFeedback = document.querySelector("#correctFeedback");
 let wrongFeedback = document.querySelector("#wrongFeedback");
-let timeLeft = document.querySelector("#timeLeft"); 
+let timeLeft = document.querySelector("#timeLeft");
 
 // Object that holds all the answers  
 let answers = {
@@ -80,10 +82,10 @@ function showCorrect() {
     correctFeedback.style.display = "block";
 
     // Removes Correct text after 1 sec
-    setTimeout(function() {
+    setTimeout(function () {
         correctFeedback.style.display = "none";
     }, 1000)
-    
+
 }
 
 function showWrong() {
@@ -97,10 +99,10 @@ function showWrong() {
     for (let i = 0; i < 5; i++) {
         timerAmount--;
     }
-     timeLeft.textContent = timerAmount;
+    timeLeft.textContent = timerAmount;
 
     // Removes Wrong text after 1 sec
-    setTimeout(function() {
+    setTimeout(function () {
         wrongFeedback.style.display = "none";
     }, 1000)
 }
@@ -112,10 +114,10 @@ function showWrong() {
 
 // Event Listener For Button Clicks
 for (let i = 0; i < mainContentSect.length; i++) {
-    mainContentSect[i].addEventListener("click", function(event) {
+    mainContentSect[i].addEventListener("click", function (event) {
         startScreen();
         question1();
-        question2();
+        // question2();
     });
 };
 
@@ -127,9 +129,9 @@ for (let i = 0; i < mainContentSect.length; i++) {
 function startScreen() {
     const startQuizBtn = document.querySelector("#startQuiz");
     const startQuizDisplay = document.querySelector(".start-content");
-    
+    console.log(event);
     // This only works if the Start button is clicked
-    if (event.target.type == "button" && event.target === startQuizBtn) {
+    if (event.target.type === "button" && event.target === startQuizBtn) {
 
         // Hide Start Section 
         startQuizDisplay.style.display = "none";
@@ -141,7 +143,7 @@ function startScreen() {
         question1();
     }
 }
- 
+
 
 // —————————————————————————————————————————————————————
 
@@ -149,13 +151,14 @@ function startScreen() {
 // This runs Question 1
 function question1() {
     const q1Display = document.querySelector(".question-1");
-    
+
+    // !!!!!!!!! Change how I switch classes. Don't overide style but switch between two classes. (Show / Hide) 
     // Displays Question 1
     q1Display.style.display = "block";
 
     // Coniditionals to validate if the correct answer is selected
-    if (event.target.type == "button" && event.target === answers.question1.answer2) {
-        
+    if (event.target.type === "button" && event.target === answers.question1.answer2) {
+
         // Flashes correct text
         showCorrect();
 
@@ -165,10 +168,10 @@ function question1() {
         // Goes to next question
         question2();
 
-    } else if (event.target.type == "button" && 
-    event.target === answers.question1.answer1 || 
-    event.target === answers.question1.answer3 || 
-    event.target === answers.question1.answer4) {
+    } else if (event.target.type === "button" &&
+        event.target === answers.question1.answer1 ||
+        event.target === answers.question1.answer3 ||
+        event.target === answers.question1.answer4) {
 
         // Flashes wrong text
         showWrong();
@@ -178,7 +181,7 @@ function question1() {
 
         // Goes to next question
         question2();
-    } 
+    }
 }
 
 
@@ -188,29 +191,29 @@ function question1() {
 // This runs Question 2
 function question2() {
     const q2Display = document.querySelector(".question-2");
-    
+
     // Displays Question 1
     q2Display.style.display = "block";
 
     // Coniditionals to validate if the correct answer is selected
-    if (event.target.type == "button" && event.target === answers.question2.answer1) {
-        
+    if (event.target.type === "button" && event.target === answers.question2.answer1) {
+
         // Flashes correct text
         showCorrect();
 
         // Goes to next question
         // question3();
 
-    } else if (event.target.type == "button" && 
-    event.target === answers.question2.answer2 || 
-    event.target === answers.question2.answer3 || 
-    event.target === answers.question2.answer4) {
+    } else if (event.target.type === "button" &&
+        event.target === answers.question2.answer2 ||
+        event.target === answers.question2.answer3 ||
+        event.target === answers.question2.answer4) {
 
         // Flashes wrong text
         showWrong();
 
         // Goes to next question
         // question3();
-    } 
+    }
 }
 
