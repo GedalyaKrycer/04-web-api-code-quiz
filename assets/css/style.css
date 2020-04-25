@@ -61,6 +61,12 @@ code {
     color: #d8ebff;
 }
 
+button code {
+    background-color: #163c58;
+    border: #14364e solid 1px;
+    
+}
+
 .container--mx-width {
     max-width: 800px;
 }
