@@ -95,6 +95,7 @@ Nav STYLES
 —————————————————————————————————————————————————*/
 .navbar {
     font-size: 18px;
+    background-color: #232323;
     border-bottom: #101010 1px solid;
 }
 
@@ -107,6 +108,9 @@ Nav STYLES
     font-weight: bold;
 }
 
+.navbar__logo {
+    height: 30px;
+}
 
 
 /*—————————————————————————————————————————————————  
