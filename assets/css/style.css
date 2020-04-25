@@ -159,3 +159,11 @@ Feedback STYLES
 .feedback--wrong-color {
     color: #ff4e24;
 }
+
+#correctFeedback {
+    display: none;
+}
+
+#wrongFeedback {
+    display: none;
+}

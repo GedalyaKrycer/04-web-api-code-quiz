@@ -1,5 +1,7 @@
 // Global Scope Variables For DOM Elements
 let mainContentSect = document.querySelectorAll("div");
+let correctFeedback = document.querySelector("#correctFeedback");
+let wrongFeedback = document.querySelector("#wrongFeedback");
 
 
 // Object that holds all the answers  
@@ -17,24 +19,53 @@ let answers = {
         answer4: document.querySelector("#q2A4")
     },
     question3: {
-        answer1: false,
-        answer2: false,
-        answer3: false,
-        answer4: false
+        answer1: document.querySelector("#q3A1"),
+        answer2: document.querySelector("#q3A2"),
+        answer3: document.querySelector("#q3A3"),
+        answer4: document.querySelector("#q3A4")
     },
     question4: {
-        answer1: false,
-        answer2: false,
-        answer3: false,
-        answer4: false
+        answer1: document.querySelector("#q4A1"),
+        answer2: document.querySelector("#q4A2"),
+        answer3: document.querySelector("#q4A3"),
+        answer4: document.querySelector("#q4A4")
     },
     question5: {
-        answer1: false,
-        answer2: false,
-        answer3: false,
-        answer4: false
+        answer1: document.querySelector("#q5A1"),
+        answer2: document.querySelector("#q5A2"),
+        answer3: document.querySelector("#q5A3"),
+        answer4: document.querySelector("#q5A4")
     }
 };
+
+
+// —————————————————————————————————————————————————————
+
+
+// Question Feedback Controls
+
+function showCorrect() {
+    // Shows Correct Text
+    correctFeedback.style.display = "block";
+
+    // Removes Correct text after 2 sec
+    setTimeout(function() {
+        correctFeedback.style.display = "none";
+    }, 2000)
+    
+}
+
+function showWrong() {
+    // Shows Wrong Text
+    wrongFeedback.style.display = "block";
+
+    // Removes Wrong text after 2 sec
+    setTimeout(function() {
+        wrongFeedback.style.display = "none";
+    }, 2000)
+}
+
+
 
 
 // —————————————————————————————————————————————————————
@@ -72,6 +103,8 @@ function startScreen() {
 
 // —————————————————————————————————————————————————————
 
+
+// This runs Question 1
 function question1() {
     const q1Display = document.querySelector(".question-1");
     
@@ -80,18 +113,26 @@ function question1() {
 
     // Coniditionals to validate if the correct answer is selected
     if (event.target.type == "button" && event.target === answers.question1.answer2) {
-        console.log("Correct answer");
         
-        // startQuizDisplay.style.display = "none";
-        // question1();
+        // Shows correct text for 2 sec
+        showCorrect();
 
     } else if (event.target.type == "button" && 
     event.target === answers.question1.answer1 || 
     event.target === answers.question1.answer3 || 
     event.target === answers.question1.answer4) {
-        console.log("Wrong answer");
+
+        // Shows wrong text for 2 sec
+        showWrong();
+        
     } 
-    
     
 
 }
+
+
+// —————————————————————————————————————————————————————
+
+
+
+
