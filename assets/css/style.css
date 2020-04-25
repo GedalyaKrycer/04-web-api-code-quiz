@@ -146,3 +146,11 @@ Feedback STYLES
     font-size: 28px;
     border-top: #101010 1px solid;
 }
+
+.feedback--correct-color {
+    color: #ffdf39;
+}
+
+.feedback--wrong-color {
+    color: #ff4e24;
+}
