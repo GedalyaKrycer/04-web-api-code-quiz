@@ -45,26 +45,32 @@ let answers = {
 // Question Feedback Controls
 
 function showCorrect() {
+
+    // Clears Wrong Answer
+    wrongFeedback.style.display = "none";
+
     // Shows Correct Text
     correctFeedback.style.display = "block";
 
-    // Removes Correct text after 2 sec
+    // Removes Correct text after 1 sec
     setTimeout(function() {
         correctFeedback.style.display = "none";
-    }, 2000)
+    }, 1000)
     
 }
 
 function showWrong() {
+    // Clears Wrong Answer
+    correctFeedback.style.display = "none";
+
     // Shows Wrong Text
     wrongFeedback.style.display = "block";
 
-    // Removes Wrong text after 2 sec
+    // Removes Wrong text after 1 sec
     setTimeout(function() {
         wrongFeedback.style.display = "none";
-    }, 2000)
+    }, 1000)
 }
-
 
 
 
@@ -114,7 +120,7 @@ function question1() {
     // Coniditionals to validate if the correct answer is selected
     if (event.target.type == "button" && event.target === answers.question1.answer2) {
         
-        // Shows correct text for 2 sec
+        // Shows correct text on a timer
         showCorrect();
 
     } else if (event.target.type == "button" && 
@@ -122,7 +128,7 @@ function question1() {
     event.target === answers.question1.answer3 || 
     event.target === answers.question1.answer4) {
 
-        // Shows wrong text for 2 sec
+        // Shows wrong text on a timer
         showWrong();
         
     } 
