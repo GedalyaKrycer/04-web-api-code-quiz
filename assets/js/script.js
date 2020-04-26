@@ -84,7 +84,7 @@ function timer() {
         if (timerAmount <= 0) {
             clearInterval(countDown);
 
-            // Skips to completed screen
+            // Displays to Completed screen
             quizComplete();
 
         } else {
@@ -139,13 +139,19 @@ function showWrong() {
 
 // —————————————————————————————————————————————————————
 
-// Hids all the question sections in the HTML
+// Hides all the question sections in the HTML
 function hideAllQuestions() {
     q1Display.classList.add("hide");
     q2Display.classList.add("hide");
     q3Display.classList.add("hide");
     q4Display.classList.add("hide");
     q5Display.classList.add("hide");
+
+    q1Display.classList.remove("show");
+    q2Display.classList.remove("show");
+    q3Display.classList.remove("show");
+    q4Display.classList.remove("show");
+    q5Display.classList.remove("show");
 }
 
 
