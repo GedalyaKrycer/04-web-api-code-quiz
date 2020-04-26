@@ -466,8 +466,7 @@ function highscores() {
 
             // Goes to start section
             startQuizDisplay.classList.add("show");
-            startQuizDisplay.classList.remove("hide");
-
+            startQuizDisplay.classList.remove("hide")
         }
 
         // Coniditionals to validate if form was submitted
