@@ -114,24 +114,29 @@ function timer() {
 function showCorrect() {
 
     // Clears Wrong Answer
-    wrongFeedback.style.display = "none";
+    wrongFeedback.classList.remove("show"); 
+    wrongFeedback.classList.add("hide");
 
     // Shows Correct Text
-    correctFeedback.style.display = "block";
+    correctFeedback.classList.remove("hide"); 
+    correctFeedback.classList.add("show");
 
     // Removes Correct text after 1.5 sec
     setTimeout(function () {
-        correctFeedback.style.display = "none";
+        correctFeedback.classList.remove("show"); 
+        correctFeedback.classList.add("hide");
     }, 1500)
 
 }
 
 function showWrong() {
-    // Clears Wrong Answer
-    correctFeedback.style.display = "none";
+    // Clears Correct Answer
+    correctFeedback.classList.remove("show"); 
+    correctFeedback.classList.add("hide");
 
     // Shows Wrong Text
-    wrongFeedback.style.display = "block";
+    wrongFeedback.classList.remove("hide"); 
+    wrongFeedback.classList.add("show");
 
     // Reduces Timer
     for (let i = 0; i < 10; i++) {
@@ -143,7 +148,8 @@ function showWrong() {
 
     // Removes Wrong text after 1.5 sec
     setTimeout(function () {
-        wrongFeedback.style.display = "none";
+        wrongFeedback.classList.remove("show"); 
+        wrongFeedback.classList.add("hide");
     }, 1500)
 }
 
@@ -175,7 +181,8 @@ startQuizDisplay.addEventListener("click", function (event) {
     if (event.target.type === "button" && event.target === startQuizBtn) {
 
         // Hide Start Section 
-        startQuizDisplay.style.display = "none";
+        startQuizDisplay.classList.remove("show"); 
+        startQuizDisplay.classList.add("hide");
 
         // Start Timer 
         timer();
@@ -367,6 +374,14 @@ function question5() {
 
 // This runs the Completed Screen
 function quizComplete() {
+
+    // ensures that last section and the confirms do not appear
+    completedDisplay.classList.remove("show"); 
+    completedDisplay.classList.add("hide");
+    wrongFeedback.classList.remove("show"); 
+    wrongFeedback.classList.add("hide");
+    correctFeedback.classList.remove("show"); 
+    correctFeedback.classList.add("hide");
     
     // Forces Interval to Clear
     for(a=0; a<100; a++){
@@ -415,10 +430,32 @@ function highscores() {
     highscoreDisplay.classList.add("show");
     highscoreDisplay.classList.remove("hide");
 
-    let userScore = document.createElement("li");
-    userScore.textContent = finalScore
+    console.log(finalScore);
 
-    // scoreList.append(userScore);
+    let userScore = document.createElement("li");
+    userScore.textContent = inputValue + " " + finalScore; 
+
+    // Adds li with initals and score to the "scores" ul element
+    scoreList.append(userScore);
+
+    
+
+    highscoreDisplay.addEventListener("click", function (event) {
+        
+        // Coniditionals to validate if form was submitted
+        if (event.target.type === "button" && event.target === playAgainBtn) { 
+
+            // Hides Completed Screen
+            highscoreDisplay.classList.remove("show"); 
+            highscoreDisplay.classList.add("hide");
+
+            // Goes to start section
+            startQuizDisplay.classList.add("show");
+            startQuizDisplay.classList.remove("hide");
+
+        }
+    });
+
 
 }
 

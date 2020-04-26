@@ -178,13 +178,11 @@ Feedback STYLES
 #correctFeedback {
     border-top: #101010 1px solid;
     padding-top: 1rem;
-    display: none;
 }
 
 #wrongFeedback {
     border-top: #101010 1px solid;
     padding-top: 1rem;
-    display: none;
 }
 
 
