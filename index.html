@@ -27,7 +27,7 @@
                 <h1><code>&lt;WebDev></code><br>Challenge Quiz</h1>
             </div>
             <div class="col-md-12 d-flex flex-column">
-                <p class="start-content--color mb-5 lead">
+                <p class="mb-5 lead">
                     Answer questions about <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code> and more—before the timer runs out. Get an answer wrong and your time is reduced. The more time left, the higher your score.
                 </p>
                 <button type="button" id="startQuiz" class="btn btn--main-style btn--lg-pad btn-lg align-self-center">Start Quiz</button>
@@ -134,6 +134,26 @@
                 </button>
             </div>
         </section>
+
+        <!-- Complete Screen -->
+        <section id="completedDisplay" class="row mt-5 mb-4 hide">
+            <div class="col-md-12 mb-3">
+                <h2>Quiz Completed!</h2>
+                <h4>Score: <span id="finalScore">0</span></h4>
+            </div>
+            <div class="col-md-12 mb-5 completed__form">
+                <p>Enter your initials for the score board:</p>
+                <form class="form-inline justify-content-center">
+                    <div class="form-group mx-sm-3 mb-2">
+                      <label for="inputId" class="sr-only">Initials</label>
+                      <input type="text" class="form-control" id="inputId" placeholder="Your Initials">
+                    </div>
+                    <button type="submit" class="btn btn--main-style mb-2">Save</button>
+                  </form>
+            </div>
+        </section>
+
+
 
         <!-- Correct / Wrong Feedback -->
         <section class="feedback">

@@ -1,6 +1,4 @@
 // Global Scope Variables For DOM Element
-// Targets all buttons 
-let mainContentSect = document.querySelectorAll("button");
 
 // Targets Correct Feedback for Questions
 let correctFeedback = document.querySelector("#correctFeedback");
@@ -18,11 +16,13 @@ let q2Display = document.querySelector("#question-2");
 let q3Display = document.querySelector("#question-3");
 let q4Display = document.querySelector("#question-4");
 let q5Display = document.querySelector("#question-5");
+let completedDisplay = document.querySelector("#completedDisplay");
+
 
 // Target Buttons
 let startQuizBtn = document.querySelector("#startQuiz");
-
-
+let code = document.querySelectorAll("code");
+let q2Click = [code, q2Display];
 
 
 // —————————————————————————————————————————————————————
@@ -81,7 +81,9 @@ function timer() {
         if (timerAmount <= 0) {
             clearInterval(countDown);
 
-            // Will go to final score later on
+            // Skips to completed screen
+            quizComplete();
+
         } else {
             timerAmount--;
             timeLeft.textContent = timerAmount;
@@ -128,6 +130,10 @@ function showWrong() {
         wrongFeedback.style.display = "none";
     }, 1000)
 }
+
+
+// —————————————————————————————————————————————————————
+
 
 
 
@@ -205,7 +211,7 @@ function question2() {
     q2Display.classList.remove("hide");
 
     q2Display.addEventListener("click", function (event) {
-        // Coniditionals to validate if the correct answer is selected
+        // Conditionals to validate if the correct answer is selected
         if (event.target.type === "button" && event.target === answers.question2.answer1) {
 
             // Flashes correct text
@@ -289,7 +295,8 @@ function question4() {
 
     q4Display.addEventListener("click", function (event) {
         // Coniditionals to validate if the correct answer is selected
-        if (event.target.type === "button" && event.target === answers.question4.answer1) {
+        if (event.target.type === "button" && 
+        event.target === answers.question4.answer1) {
 
             // Flashes correct text
             showCorrect();
@@ -339,8 +346,8 @@ function question5() {
             q5Display.classList.remove("show"); 
             q5Display.classList.add("hide");
 
-            // Goes to next question
-            // question3();
+            // Goes to completed screen
+            quizComplete();
 
         } else if (event.target.type === "button" &&
             event.target === answers.question5.answer2 ||
@@ -354,8 +361,31 @@ function question5() {
             q5Display.classList.remove("show"); 
             q5Display.classList.add("hide");
 
-            // Goes to next question
-            // question3();
+            // Goes to completed screen
+            quizComplete();
+        }
+    });
+}
+
+// —————————————————————————————————————————————————————
+
+// This runs the Completed Screen
+function quizComplete() {
+    
+    // Hide all Sections
+
+    // Displays Section Content
+    completedDisplay.classList.add("show");
+    completedDisplay.classList.remove("hide");
+
+    completedDisplay.addEventListener("click", function (event) {
+        // Coniditionals to validate if the correct answer is selected
+        if (event.target.type === "submit") {
+            event.preventDefault();
+
+            alert("Hello");
+            
+
         }
     });
 }
