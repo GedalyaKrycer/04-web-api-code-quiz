@@ -77,7 +77,7 @@ timeLeft.textContent = timerAmount;
 // Count Down Function
 function timer() {
     // Sets up count down
-    let countDown = setInterval(count, 1000);
+    const countDown = setInterval(count, 1000);
 
     // Sets up conditionals for when counter hits 0
     function count() {
@@ -108,10 +108,10 @@ function showCorrect() {
     // Shows Correct Text
     correctFeedback.style.display = "block";
 
-    // Removes Correct text after 1 sec
+    // Removes Correct text after 1.5 sec
     setTimeout(function () {
         correctFeedback.style.display = "none";
-    }, 1000)
+    }, 1500)
 
 }
 
@@ -130,10 +130,10 @@ function showWrong() {
     // Displays time amount to HTML
     timeLeft.textContent = timerAmount;
 
-    // Removes Wrong text after 1 sec
+    // Removes Wrong text after 1.5 sec
     setTimeout(function () {
         wrongFeedback.style.display = "none";
-    }, 1000)
+    }, 1500)
 }
 
 
@@ -200,13 +200,6 @@ function question1() {
 
         // Flashes wrong text
         showWrong();
-
-        // Hides Current Question Section
-        q1Display.classList.remove("show"); 
-        q1Display.classList.add("hide");
-
-        // Goes to next question
-        question2();
     }
     });
 }
@@ -243,13 +236,6 @@ function question2() {
 
             // Flashes wrong text
             showWrong();
-
-            // Hides Current Question Section
-            q2Display.classList.remove("show"); 
-            q2Display.classList.add("hide");
-
-            // Goes to next question
-            question3();
         }
     });
 }
@@ -285,13 +271,6 @@ function question3() {
 
             // Flashes wrong text
             showWrong();
-
-            // Hides Current Question Section
-            q3Display.classList.remove("show"); 
-            q3Display.classList.add("hide");
-
-            // Goes to next question
-            question4();
         }
     });
 }
@@ -327,13 +306,6 @@ function question4() {
 
             // Flashes wrong text
             showWrong();
-
-            // Hides Current Question Section
-            q4Display.classList.remove("show"); 
-            q4Display.classList.add("hide");
-
-            // Goes to next question
-            question5();
         }
     });
 }
@@ -368,13 +340,6 @@ function question5() {
 
             // Flashes wrong text
             showWrong();
-
-            // Hides Current Question Section
-            q5Display.classList.remove("show"); 
-            q5Display.classList.add("hide");
-
-            // Goes to completed screen
-            quizComplete();
         }
     });
 }
@@ -385,6 +350,8 @@ function question5() {
 function quizComplete() {
     
     finalScore.textContent = timerAmount;
+    clearInterval(countDown);
+    
     // Hide all Sections
     hideAllQuestions();
 
