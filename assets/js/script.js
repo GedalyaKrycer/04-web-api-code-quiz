@@ -73,7 +73,6 @@ let answers = {
 let timerAmount = 100;
 timeLeft.textContent = timerAmount;
 
-
 // Count Down Function
 function timer() {
     // Sets up count down
@@ -93,7 +92,6 @@ function timer() {
         }
     }
 };
-
 
 // —————————————————————————————————————————————————————
 
@@ -359,7 +357,10 @@ function quizComplete() {
     
     // Displays final score based on time left
     finalScore.textContent = timerAmount;
-    
+
+    // Replaces timer text with 0
+    timeLeft.textContent = "0";
+        
     // Hide all Sections
     hideAllQuestions();
 
