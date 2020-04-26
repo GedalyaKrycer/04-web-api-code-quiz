@@ -34,8 +34,7 @@ let completedDisplay = document.querySelector("#completedDisplay");
 
 // Target Buttons
 let startQuizBtn = document.querySelector("#startQuiz");
-let code = document.querySelectorAll("code");
-let q2Click = [code, q2Display];
+let navHighscore = document.querySelector("#viewScore");
 
 
 // —————————————————————————————————————————————————————
@@ -107,7 +106,6 @@ function timer() {
 
 
 // Correct/Wrong Feedback Controls
-
 function showCorrect() {
 
     // Clears Wrong Answer
@@ -384,7 +382,7 @@ function quizComplete() {
             event.preventDefault();
             inputValue = inputId.value; 
 
-            // highscores();
+            highscores();
 
         }
     });
@@ -402,3 +400,12 @@ function highscores() {
 
 
 // —————————————————————————————————————————————————————
+
+
+// Navbar Highscore Event Listner 
+navHighscore.addEventListener("click", function(event) {
+    if (event.target.type === "button" && event.target === this) {
+
+        alert("Hery gurl hey");
+    }
+});
