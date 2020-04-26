@@ -9,6 +9,9 @@ let wrongFeedback = document.querySelector("#wrongFeedback");
 // Targets Timer
 let timeLeft = document.querySelector("#timeLeft");
 
+// Targets Final Score
+let finalScore = document.querySelector("#finalScore");
+
 // Target Display Sections
 let startQuizDisplay = document.querySelector(".start-content");
 let q1Display = document.querySelector("#question-1");
@@ -120,9 +123,11 @@ function showWrong() {
     wrongFeedback.style.display = "block";
 
     // Reduces Timer
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
         timerAmount--;
     }
+
+    // Displays time amount to HTML
     timeLeft.textContent = timerAmount;
 
     // Removes Wrong text after 1 sec
@@ -134,7 +139,14 @@ function showWrong() {
 
 // —————————————————————————————————————————————————————
 
-
+// Hids all the question sections in the HTML
+function hideAllQuestions() {
+    q1Display.classList.add("hide");
+    q2Display.classList.add("hide");
+    q3Display.classList.add("hide");
+    q4Display.classList.add("hide");
+    q5Display.classList.add("hide");
+}
 
 
 // —————————————————————————————————————————————————————
@@ -254,7 +266,7 @@ function question3() {
 
     q3Display.addEventListener("click", function (event) {
         // Coniditionals to validate if the correct answer is selected
-        if (event.target.type === "button" && event.target === answers.question3.answer1) {
+        if (event.target.type === "button" && event.target === answers.question3.answer3) {
 
             // Flashes correct text
             showCorrect();
@@ -267,8 +279,8 @@ function question3() {
             question4();
 
         } else if (event.target.type === "button" &&
+            event.target === answers.question3.answer1 ||
             event.target === answers.question3.answer2 ||
-            event.target === answers.question3.answer3 ||
             event.target === answers.question3.answer4) {
 
             // Flashes wrong text
@@ -337,7 +349,7 @@ function question5() {
 
     q5Display.addEventListener("click", function (event) {
         // Coniditionals to validate if the correct answer is selected
-        if (event.target.type === "button" && event.target === answers.question5.answer1) {
+        if (event.target.type === "button" && event.target === answers.question5.answer4) {
 
             // Flashes correct text
             showCorrect();
@@ -350,9 +362,9 @@ function question5() {
             quizComplete();
 
         } else if (event.target.type === "button" &&
+            event.target === answers.question5.answer1 ||
             event.target === answers.question5.answer2 ||
-            event.target === answers.question5.answer3 ||
-            event.target === answers.question5.answer4) {
+            event.target === answers.question5.answer3) {
 
             // Flashes wrong text
             showWrong();
@@ -372,7 +384,9 @@ function question5() {
 // This runs the Completed Screen
 function quizComplete() {
     
+    finalScore.textContent = timerAmount;
     // Hide all Sections
+    hideAllQuestions();
 
     // Displays Section Content
     completedDisplay.classList.add("show");
