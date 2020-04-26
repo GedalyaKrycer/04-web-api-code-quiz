@@ -143,9 +143,17 @@ Question STYLES
     margin-bottom: 2rem;
 }
 
-/* !!!!! SWITCH TO SHOW / HIDE CLASSES !!!! */
 
-.question-1 {
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+/* .question-1 {
     display: none;
 }
 
@@ -163,7 +171,7 @@ Question STYLES
 
 .question-5 {
     display: none;
-}
+} */
 
 
 /*—————————————————————————————————————————————————  
