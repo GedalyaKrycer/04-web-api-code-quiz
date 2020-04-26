@@ -172,6 +172,21 @@ function hideAllQuestions() {
 }
 
 
+// Hides start section
+function hideStartSection() {
+    startQuizDisplay.classList.add("hide");
+    startQuizDisplay.classList.remove("show");
+}
+
+
+// Hides feedback section
+function hideFeedbackSection() {
+    wrongFeedback.classList.remove("show"); 
+    wrongFeedback.classList.add("hide");
+    correctFeedback.classList.remove("show"); 
+    correctFeedback.classList.add("hide");
+}
+
 // —————————————————————————————————————————————————————
 
 
@@ -375,13 +390,10 @@ function question5() {
 // This runs the Completed Screen
 function quizComplete() {
 
-    // ensures that last section and the confirms do not appear
+    // ensures that last section and the feedback section do not appear
     completedDisplay.classList.remove("show"); 
     completedDisplay.classList.add("hide");
-    wrongFeedback.classList.remove("show"); 
-    wrongFeedback.classList.add("hide");
-    correctFeedback.classList.remove("show"); 
-    correctFeedback.classList.add("hide");
+    hideFeedbackSection()
     
     // Forces Interval to Clear
     for(a=0; a<100; a++){
@@ -426,17 +438,22 @@ function quizComplete() {
 // This runs the highscore Screen
 function highscores() {
 
+
     // Displays Section Content
     highscoreDisplay.classList.add("show");
     highscoreDisplay.classList.remove("hide");
 
     console.log(finalScore);
 
-    let userScore = document.createElement("li");
-    userScore.textContent = inputValue + " " + finalScore; 
+    // This makes sure the list only generates if a form inout is made
+    if (inputValue) {
+        let userScore = document.createElement("li");
+        finalScore = finalScore.parse();
+        userScore.textContent = inputValue + " " + finalScore; 
 
-    // Adds li with initals and score to the "scores" ul element
-    scoreList.append(userScore);
+        // Adds li with initals and score to the "scores" ul element
+        scoreList.append(userScore);
+    }
 
     
 
@@ -466,6 +483,10 @@ function highscores() {
 // Navbar Highscore Event Listner 
 navHighscore.addEventListener("click", function(event) {
     if (event.target.type === "button" && event.target === this) {
+        hideStartSection();
+        hideFeedbackSection()
+        hideAllQuestions();
         highscores();
+
     }
 });
