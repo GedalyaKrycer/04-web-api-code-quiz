@@ -15,11 +15,12 @@ let finalScore = document.querySelector("#finalScore");
 // Holds Final Score value
 let inputValue;
 
-console.log(inputValue);
 
 // Initials Input Element
 let inputId = document.querySelector("#inputId");
 
+// ul List for High Scores
+let scoreList = document.querySelector(".scores");
 
 
 // Target Display Sections
@@ -30,11 +31,15 @@ let q3Display = document.querySelector("#question-3");
 let q4Display = document.querySelector("#question-4");
 let q5Display = document.querySelector("#question-5");
 let completedDisplay = document.querySelector("#completedDisplay");
+let highscoreDisplay = document.querySelector("#highscoreDisplay");
+
 
 
 // Target Buttons
 let startQuizBtn = document.querySelector("#startQuiz");
 let navHighscore = document.querySelector("#viewScore");
+let playAgainBtn = document.querySelector("#playAgainBtn");
+let clearBtn = document.querySelector("#clearBtn");
 
 
 // —————————————————————————————————————————————————————
@@ -363,6 +368,11 @@ function question5() {
 // This runs the Completed Screen
 function quizComplete() {
     
+    // Forces Interval to Clear
+    for(a=0; a<100; a++){
+        window.clearInterval(a);
+    }
+
     // Displays final score based on time left
     finalScore.textContent = timerAmount;
 
@@ -377,11 +387,17 @@ function quizComplete() {
     completedDisplay.classList.remove("hide");
 
     completedDisplay.addEventListener("click", function (event) {
-        // Coniditionals to validate if the correct answer is selected
+        
+        // Coniditionals to validate if form was submitted
         if (event.target.type === "submit") {
             event.preventDefault();
             inputValue = inputId.value; 
 
+            // Hides Completed Screen
+            completedDisplay.classList.remove("show"); 
+            completedDisplay.classList.add("hide");
+
+            // Goes to highscore section
             highscores();
 
         }
@@ -394,7 +410,15 @@ function quizComplete() {
 
 // This runs the highscore Screen
 function highscores() {
-    
+
+    // Displays Section Content
+    highscoreDisplay.classList.add("show");
+    highscoreDisplay.classList.remove("hide");
+
+    let userScore = document.createElement("li");
+    userScore.textContent = finalScore
+
+    // scoreList.append(userScore);
 
 }
 
@@ -405,7 +429,6 @@ function highscores() {
 // Navbar Highscore Event Listner 
 navHighscore.addEventListener("click", function(event) {
     if (event.target.type === "button" && event.target === this) {
-
-        alert("Hery gurl hey");
+        highscores();
     }
 });
