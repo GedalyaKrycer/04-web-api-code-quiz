@@ -89,6 +89,7 @@ timeLeft.textContent = timerAmount;
 
 // Count Down Function
 function timer() {
+    timerAmount = 100;
     // Sets up count down
     const countDown = setInterval(count, 1000);
 
