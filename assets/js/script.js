@@ -12,6 +12,16 @@ let timeLeft = document.querySelector("#timeLeft");
 // Targets Final Score
 let finalScore = document.querySelector("#finalScore");
 
+// Holds Final Score value
+let inputValue;
+
+console.log(inputValue);
+
+// Initials Input Element
+let inputId = document.querySelector("#inputId");
+
+
+
 // Target Display Sections
 let startQuizDisplay = document.querySelector(".start-content");
 let q1Display = document.querySelector("#question-1");
@@ -372,12 +382,23 @@ function quizComplete() {
         // Coniditionals to validate if the correct answer is selected
         if (event.target.type === "submit") {
             event.preventDefault();
+            inputValue = inputId.value; 
 
-            alert("Hello");
-            
+            // highscores();
 
         }
     });
 }
+
+
+// —————————————————————————————————————————————————————
+
+
+// This runs the highscore Screen
+function highscores() {
+    
+
+}
+
 
 // —————————————————————————————————————————————————————
