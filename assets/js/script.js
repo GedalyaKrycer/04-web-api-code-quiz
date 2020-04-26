@@ -443,20 +443,18 @@ function highscores() {
     highscoreDisplay.classList.add("show");
     highscoreDisplay.classList.remove("hide");
 
-    console.log(finalScore);
-
     // This makes sure the list only generates if a form inout is made
     if (inputValue) {
         let userScore = document.createElement("li");
-        finalScore = finalScore.parse();
-        userScore.textContent = inputValue + " " + finalScore; 
+        finalScore = finalScore.textContent;
+        userScore.textContent = `${inputValue} scored ${finalScore} points`; 
 
         // Adds li with initals and score to the "scores" ul element
         scoreList.append(userScore);
     }
 
     
-
+    // Controls high score buttons
     highscoreDisplay.addEventListener("click", function (event) {
         
         // Coniditionals to validate if form was submitted
@@ -470,6 +468,13 @@ function highscores() {
             startQuizDisplay.classList.add("show");
             startQuizDisplay.classList.remove("hide");
 
+        }
+
+        // Coniditionals to validate if form was submitted
+        else if (event.target.type === "button" && event.target === clearBtn) { 
+
+            // Deletes all the li elements
+            scoreList.innerHTML = "";
         }
     });
 
