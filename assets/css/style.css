@@ -21,6 +21,7 @@ h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 3rem;
+    color: white;
     color: rgba(255, 255, 255, 0.85);
 }
 
@@ -44,6 +45,7 @@ h4 {
 
 p {
     font-family: 'Montserrat', sans-serif; 
+    color: white;
     color: rgba(255, 255, 255, 0.85);
 }
 
@@ -70,7 +72,7 @@ button code {
 
 .btn--main-style {
     background-color: #1f5178;
-    box-shadow: 0px 5px 8px 2px #131c24;
+    box-shadow: 0 5px 8px 2px #131c24;
     color: white;
     font-family: 'Share Tech Mono', monospace;
     display: block;
@@ -82,13 +84,14 @@ button code {
 }
 
 .btn:hover {
-    box-shadow: 0px 1px 1px 0px #02121f;
+    box-shadow: 0 1px 1px 0 #02121f;
     color: #4399db;
     transition: .3s;
 }
 
 .btn:active {
     box-shadow: none;
+    background-color: #1b4768;
     background-color: rgba(31, 81, 120, 0.6);
     transition: .3s;
 }
@@ -103,6 +106,7 @@ Nav STYLES
 }
 
 .nav__timer {
+    color: white;
     color: rgba(255, 255, 255, 0.85);
     font-family: 'Share Tech Mono', monospace;
 }
@@ -124,6 +128,7 @@ Nav STYLES
 }
 
 #viewScore:hover {
+    color: #3a80b6;
     color: rgba(67, 153, 219, 0.7);
     transition: .4s;
     text-decoration: none;
@@ -160,6 +165,7 @@ Question STYLES
 Feedback STYLES
 —————————————————————————————————————————————————*/
 .feedback {
+    color: white;
     color: rgba(255, 255, 255, 0.85);
     font-size: 28px;
     margin-top: 2.5rem;
@@ -203,7 +209,7 @@ Completed STYLES
     /* border: #101010 1px solid; */
     padding: 40px;
     max-width: 400px;
-    box-shadow: 0px 5px 8px 2px #1c1d1c;
+    box-shadow: 0 5px 8px 2px #1c1d1c;
     margin: 1rem auto;
 }
 
@@ -226,7 +232,7 @@ Highscores STYLES
     background-color: #232323;
     padding: 10px 20px;
     max-width: 400px;
-    box-shadow: 0px 5px 8px 2px #1c1d1c;
+    box-shadow: 0 5px 8px 2px #1c1d1c;
     margin: 1rem auto;
 }
 

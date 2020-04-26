@@ -106,7 +106,7 @@ function timer() {
             timeLeft.textContent = timerAmount;
         }
     }
-};
+}
 
 // —————————————————————————————————————————————————————
 
@@ -126,7 +126,7 @@ function showCorrect() {
     setTimeout(function () {
         correctFeedback.classList.remove("show"); 
         correctFeedback.classList.add("hide");
-    }, 1500)
+    }, 1500);
 
 }
 
@@ -151,7 +151,7 @@ function showWrong() {
     setTimeout(function () {
         wrongFeedback.classList.remove("show"); 
         wrongFeedback.classList.add("hide");
-    }, 1500)
+    }, 1500);
 }
 
 
@@ -394,10 +394,10 @@ function quizComplete() {
     // ensures that last section and the feedback section do not appear
     completedDisplay.classList.remove("show"); 
     completedDisplay.classList.add("hide");
-    hideFeedbackSection()
+    hideFeedbackSection();
     
     // Forces Interval to Clear
-    for(a=0; a<100; a++){
+    for(let a=0; a<100; a++){
         window.clearInterval(a);
     }
 
@@ -467,7 +467,7 @@ function highscores() {
 
             // Goes to start section
             startQuizDisplay.classList.add("show");
-            startQuizDisplay.classList.remove("hide")
+            startQuizDisplay.classList.remove("hide");
         }
 
         // Coniditionals to validate if form was submitted
@@ -489,7 +489,7 @@ function highscores() {
 navHighscore.addEventListener("click", function(event) {
     if (event.target.type === "button" && event.target === this) {
         hideStartSection();
-        hideFeedbackSection()
+        hideFeedbackSection();
         hideAllQuestions();
         highscores();
 

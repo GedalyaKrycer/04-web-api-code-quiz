@@ -11,7 +11,7 @@ All content and interactions on one page. Once starting the quiz, a count down t
 
 * Includes logo that refreshes the page 
 
-* Highschool section can be viewed at any time. 
+* Highscore section can be viewed at any time. 
 
 * Layout it built with bootstrap and custom CSS. It is friendly for mobile. 
 
@@ -20,6 +20,14 @@ All content and interactions on one page. Once starting the quiz, a count down t
 * The quiz ends when the 5th question is answered or the timer runs out. 
 
 * Timer resets when starting the quiz over without refreshing
+
+* `li` elements in the Highscore section generate with JS. They are also styled dynamically based on odd/even/lastchild
+
+* Quiz can be retaken without refreshing, as well as the high score section being cleared
+
+* This project was a great practice in functions, changing class and other DOM elements with Java script and working with event delegation. 
+
+* Ran code through HTML, CSS and JS validators
 
 
 
