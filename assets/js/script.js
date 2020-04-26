@@ -344,13 +344,15 @@ function question5() {
     });
 }
 
+
 // —————————————————————————————————————————————————————
+
 
 // This runs the Completed Screen
 function quizComplete() {
     
+    // Displays final score based on time left
     finalScore.textContent = timerAmount;
-    clearInterval(countDown);
     
     // Hide all Sections
     hideAllQuestions();
