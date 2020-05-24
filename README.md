@@ -1,7 +1,7 @@
 # 04-web-api-code-quiz
 Created a single page application coding quiz, with original questions, html, css, bootstrap and JavaScript
 
-### [View Deployed Site](https://github.com/GedalyaKrycer/04-web-api-code-quiz/deployments)
+### [View Deployed Site](https://gedalyakrycer.github.io/04-web-api-code-quiz/)
 
 ## Objective
 All content and interactions happen on one page and dynamically appear when directed. Once starting the quiz, a countdown timer begins which also acts as the final score. For every question answered wrong, 10sec is deducted from the timer. At the end of the quiz, the available time is used as the score. The score and quiz taker's initials can then be logged in a JavaScript generated list.
