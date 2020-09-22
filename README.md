@@ -1,4 +1,4 @@
-# 04-web-api-code-quiz
+# Web Dev Challenge Quiz
 Created a single page application coding quiz, with original questions, html, css, bootstrap and JavaScript
 
 ### [View Deployed Site](https://gedalyakrycer.github.io/04-web-api-code-quiz/)
